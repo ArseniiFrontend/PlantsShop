@@ -1,0 +1,1306 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: "Sansation";
+    src: url("../fonts/Sansation_Regular.ttf") format("ttf");
+}
+
+$theme-colors: (
+    "light-green": #AFFFB2,
+    "dark-green": #264132,
+    "dark-green-gradient-primary": rgba(86, 121, 82, 0.4),
+    "dark-green-border-primary": rgba(255, 255, 255, 0.1),
+    "light-green-gradient-secondary": rgba(210, 255, 210, 0.5),
+    "light-blue-gradient-secondary": rgba(172, 236, 240, 0.5),
+    "light-grey-border-secondary": rgba(255, 255, 255, 0.5),
+    "light-green-button-background-color": rgba(175, 255, 178, .3),
+    "light-green-button-border": rgba(175, 255, 178, .8),
+    "light-green-button-hover-background-color": rgba(175, 255, 178, .5),
+    "dark-green-button-hover-background-color": #10524d,
+    "grey-border-color": #E0E0E0,
+    "white": #FFFFFF,
+    "grey": rgba(217, 217, 217, 1),  
+    "light-yellow-gradient-tertiary": rgba(255, 251, 219, 1), 
+    "light-green-gradient-tertiary": rgba(119, 221, 119, 1)
+);
+
+@function get-color($name) {
+    @return map-get($theme-colors, $name);
+}
+
+$text-colors: (
+    "text-light-green": #AFFFB2,
+    "text-dark-blue": #156963,
+    "text-brown": #2C1500,
+    "text-black": #000000
+);
+
+$text-decorations: (
+    "font-weight-light": 300,
+    "font-weight-regular": 400,
+    "font-weight-medium": 500,
+    "font-weight-semibold": 600,
+    "font-weight-bold": 700,
+    "font-weight-extrabold": 800,
+    "font-weight-black": 900,
+    "font-family": 'Roboto', 
+);
+
+$site-decorations: (
+    "navbar-border-bottom-radius": 24px,
+    "first-page-border-bottom-radius": 30px,
+    "scrollbar-width": 12px,
+    "scrollbar-height": 12px,
+    "scrollbar-color": #66f78a,
+    "scrollbar-hover-color": #5be67e,
+    "scrollbar-background-color": #c6ffde,
+    "scrollbar-border-radius": 0px
+);
+
+$eclipse-round-animation-enabled: true;
+$eclipse-hover-animation-enabled: true;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 35px
+}
+
+.firstPage {
+    width: 100%;
+    height: 1080px;
+    background-image: url('../images/background-photo.png') !important; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: map-get($site-decorations, "first-page-border-bottom-radius" );
+    border-bottom-right-radius: map-get($site-decorations, "first-page-border-bottom-radius" );
+}
+
+.custom-select {
+    appearance: none !important;
+    background: url('../icons/language-icon.svg') no-repeat right 10px center !important; 
+    padding-right: 60px !important; 
+    border: none !important;
+}
+
+.custom-select:focus {
+    outline: none !important;
+    box-shadow: none !important; 
+}
+
+.container-plants {
+    padding: 0 20px; 
+    width: 100%;
+}
+
+.navbar {
+    background: map-get($theme-colors, "dark-green-gradient-primary" ); 
+    border: 1px solid map-get($theme-colors, "dark-green-border-primary" );
+    backdrop-filter: blur(15px);
+    border-bottom-left-radius: map-get($site-decorations, "navbar-border-bottom-radius" ) !important;
+    border-bottom-right-radius: map-get($site-decorations, "navbar-border-bottom-radius" ) !important;
+}
+
+.header-buttons .first-button, .header-buttons .second-button {
+    padding: 10px; 
+}
+
+.logo-padding h1 {
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: 560;
+    font-size: 55px;
+    color: map-get($theme-colors, "light-green" );
+    opacity: 80%;
+    cursor: default;
+    margin-left: 10px;
+}
+
+.main-text {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-medium" );
+    color: map-get($theme-colors, "white" );
+    cursor: default;
+}
+
+.main-text .firstBox {
+    width: 200%;
+    max-width: 1522px;
+    height: 124.63px;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(90deg, get-color("light-green-gradient-secondary") 0%, get-color("light-blue-gradient-secondary") 100%);
+    border-radius: 15px;
+    background-size: cover;
+    font-size: 96px;
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border: 1px solid map-get($theme-colors, "light-grey-border-secondary" );
+}
+
+.firstBox span {
+    color: map-get($text-colors, "text-dark-blue" );
+}
+
+.main-text .secondBox {
+    position: relative;
+    width: 200%;
+    max-width: 797.53px;
+    height: 120.37px;
+    margin-top: 5px;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(90deg, get-color("light-green-gradient-secondary") 0%, get-color("light-blue-gradient-secondary") 100%);
+    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    font-size: 96px;
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border: 1px solid map-get($theme-colors, "light-grey-border-secondary" );
+}
+
+.main-text h1 {
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-light" );
+    padding-top: 30px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.first-button div,
+.second-button div {
+    display: flex;
+    align-items: center; 
+    width: 248px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: map-get($theme-colors, "light-green-button-background-color" );
+    border: 1px solid map-get($theme-colors, "light-green-button-border" );
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: map-get($theme-colors, "light-green-button-hover-background-color" ) !important;
+    }
+}
+
+
+.first-button img {
+    margin-left: 20px !important; 
+}
+
+.second-button img {
+    margin-left: 120px !important;
+}
+
+.first-button h1,
+.second-button h1 {
+    margin-left: 20px;
+    font-family: map-get($text-decorations, "Roboto" );
+    font-weight: map-get($text-decorations, "font-weight-medium" );
+    font-size: 36px;
+    color: map-get($text-colors, "text-brown" ) !important;
+}
+
+.custom-select {
+    font-family: map-get($text-decorations, "Roboto" ) !important;
+    font-weight: map-get($text-decorations, "font-weight-medium" ) !important;
+    font-size: 36px !important; 
+    color: map-get($text-colors, "text-brown" ) !important;
+}
+
+.custom-select:hover {
+    cursor: pointer;
+}
+
+.custom-select option {
+    font-family: map-get($text-decorations, "Roboto" ) !important;
+    font-weight: map-get($text-decorations, "font-weight-medium" ) !important;
+    font-size: 36px !important; 
+    background-color: map-get($theme-colors, "dark-green" ) !important;
+    color: map-get($theme-colors, "light-green" );
+}
+
+.eclipse-button {
+    display: flex !important;
+    justify-content: center;
+    padding-top: 150px;
+    pointer-events: none; 
+}
+
+@mixin animated {
+    @if $eclipse-round-animation-enabled {
+        animation: rotate-border 10s linear infinite;
+    } @else {
+        animation: none;
+    }
+}
+
+.eclipse {
+    width: 150px; 
+    height: 150px;
+    border-radius: 50%; 
+    backdrop-filter: blur(15px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .1) 100%);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    position: relative !important;
+    pointer-events: auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 4px dashed map-get($theme-colors, "white" );
+        @include animated;
+        pointer-events: none; 
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url('../icons/burger-menu-icon.svg');
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important; 
+}
+
+.secondPage {
+    width: 100%;
+    height: auto;
+}
+
+.secondPage-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 110px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 75px !important;
+    font-weight: map-get($text-decorations, "font-weight-black" );
+    font-family: map-get($text-decorations, "font-family" );
+    color: map-get($text-colors, "text-dark-blue" );
+    cursor: default
+}
+
+.custom-margin {
+    margin-right: 20px !important;
+    width: 60px;
+    height: 60px;
+}
+
+.first-line {
+    margin-bottom: 20px;
+}
+
+.secondPageContainer {
+    padding-top: 20px; 
+}
+
+.secondPageContainer .row {
+    display: flex;           
+    flex-wrap: wrap;        
+    gap: 40px !important;              
+}
+
+.secondPageCard {
+    border: 1px solid map-get($theme-colors, "grey-border-color" );
+    flex: 1 1 430px !important;        
+    max-width: 430px !important;       
+    height: 250px !important;          
+    display: flex !important;          
+    justify-content: space-around !important; 
+    transition: all .3s ease;
+}
+
+.secondPageCard:hover {
+    transform: scale(1.05);
+}
+
+.custom-card {
+    padding-top: 20px;
+}
+
+.custom-card h1 {
+    font-size: 32px;
+    font-weight: map-get($text-decorations, "font-weight-black" );
+    font-family: map-get($text-decorations, "font-family" );
+    color: map-get($text-colors, "text-dark-blue" );
+    line-height: 35px;
+    cursor: default;
+}
+
+.custom-card p {
+    font-size: 20px;
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-light" );
+    color: map-get($text-colors, "text-black" );
+    line-height: 22px;
+    cursor: default;
+}
+
+::-webkit-scrollbar {
+    width: map-get($site-decorations, "scrollbar-width" ); 
+    height: map-get($site-decorations, "scrollbar-height" ); 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: map-get($site-decorations, "scrollbar-color" ); 
+    border-radius: map-get($site-decorations, "scrollbar-border-radius" );
+
+    &:hover {
+        background-color: map-get($site-decorations, "scrollbar-hover-color" ); 
+    }
+}
+
+::-webkit-scrollbar-track {
+    background: map-get($site-decorations, "scrollbar-background-color" );
+}
+
+
+.thirdPage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 20px; 
+    height: auto; 
+    overflow: hidden; 
+    height: auto;
+    min-height: 880px;
+}
+
+.first-content img{
+    padding-top: 105px;
+}
+
+.firstContent {
+    padding-left: 10px;
+}
+
+.image-right {
+    display: block;
+}
+
+.section-title {
+    color: map-get($text-colors, "text-brown" );
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-bold" );
+    font-size: 45px;
+    padding-bottom: 15px;
+}
+
+.section-subtitle {
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-regular" );
+    color: map-get($text-colors, "text-brown" );
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+.thirdPageButton {
+    position: relative;
+    width: 217px !important;
+    height: 67px !important;
+    border: none;
+    overflow: hidden !important;
+    background-color: map-get($text-colors, "text-dark-blue" );
+    color: map-get($theme-colors, "white" );
+    font-size: 25px;
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-regular" );
+    transition: all .8s ease;
+
+    &:hover {
+        background-color: map-get($theme-colors, "dark-green-button-hover-background-color" );
+        width: 270px !important;
+    }
+}
+
+.thirdPageButton img {
+    position: absolute;
+    right: 10px;
+    transform: translateX(-50%);
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    transition: all 0.8s ease;
+}
+
+.thirdPageButton:hover img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.firthPage {
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 70px;
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-extrabold" );
+    padding-bottom: 50px !important;
+    color: map-get($text-colors, "text-dark-blue" );
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo-item {
+    padding: 30px !important; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.fifthPage {
+    height: auto;
+    max-height: 1080px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-image {
+    max-width: 100%; 
+    height: auto;
+    margin-left: 20px; 
+}
+
+.card {
+    height: auto !important; 
+    width: 100% !important;
+    display: flex;
+    border: none !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, 
+        map-get($theme-colors, "grey") 39%, 
+        map-get($theme-colors, "light-yellow-gradient-tertiary") 52%, 
+        map-get($theme-colors, "light-green-gradient-tertiary") 100%);
+}
+
+
+.card-title {
+    margin-bottom: 50px; 
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-bold" );
+    color: map-get($text-colors, "text-brown" );
+    font-size: 70px;
+    padding-bottom: 20px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.fifthPageButton {
+    width: 266px !important;
+    height: 77px !important;
+    border: none;
+    background-color: map-get($text-colors, "text-dark-blue" );
+    color: map-get($theme-colors, "white" );
+    font-size: 32px;
+    font-family: map-get($text-decorations, "font-family" );
+    font-weight: map-get($text-decorations, "font-weight-regular" );
+    transition: all .8s ease;
+
+    &:hover {
+        background-color: map-get($theme-colors, "dark-green-button-hover-background-color" );
+    }
+}
+
+.text-content {
+    padding-bottom: 150px !important;
+}
+
+.fifthPageButton img {
+    padding: 0 !important;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.eclipse img {
+    width: 90px;
+    height: auto; 
+    transition: transform 0.3s;
+}
+
+@mixin animated {
+    @if $eclipse-hover-animation-enabled {
+        animation: arrow-animation 1s linear infinite;
+    } @else {
+        animation: none;
+    }
+}
+
+.eclipse:hover img {
+    @include animated; 
+}
+
+@keyframes arrow-animation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (width <= 1400px) {
+    .firstPage {
+        height: 980px;
+    }
+
+    .main-text {
+        padding-top: 140px;
+    }
+
+    .main-text .firstBox {
+        max-width: 882px;
+        height: 104.63px;
+        font-size: 54px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 500px;
+        height: 104.63px;
+        font-size: 54px;
+    }
+
+    .main-text h1 {
+        padding-top: 20px;
+        font-size: 26px;
+    }
+
+    .eclipse-button {
+        padding-top: 50px;
+    }
+    
+    .eclipse {
+        width: 130px; 
+        height: 130px;
+    }
+
+    .eclipse img {
+        width: 80px;
+    }
+
+    .image-right {
+        display: none !important;
+    }
+
+    .first-content {
+        text-align: center;
+    }
+
+    .first-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important; 
+    }
+
+    .col-md-6.second-content {
+        display: none !important; 
+    }
+}
+
+@media (width <= 1200px) {
+    .card-title {
+        font-size: 60px !important;
+    }
+}
+
+@media (width <= 991px) {
+    .card-image {
+        max-width: 50% !important; 
+        margin-left: 0px; 
+        padding-right: 25px;
+    }
+    
+    .card-title {
+        font-size: 45px !important;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+}
+
+@media (width <= 990px) {
+    .collapse .header-buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .secondPage-header {
+        font-size: 68px !important;
+    }
+
+    .card {
+        width: 100% !important;
+    }
+}
+
+@media (width <= 932px) {
+    .collapse .header-buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-padding h1 {
+        padding-top: 10px;
+        font-size: 45px;
+        margin-left: 0px;
+    }
+
+    .main-text .firstBox {
+        max-width: 732px;
+        height: 94.63px;
+        font-size: 45px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 400px;
+        height: 94.63px;
+        font-size: 45px;
+    }
+
+    .main-text h1 {
+        padding-top: 20px;
+        font-size: 22px;
+    }
+
+    .eclipse-button {
+        margin-top: -50px;
+    }
+    
+    .eclipse {
+        width: 120px; 
+        height: 120px;
+    }
+
+    .eclipse img {
+        width: 70px;
+    }
+
+    .secondPage-header {
+        font-size: 60px !important;
+    }
+
+    .gallery-title {
+        font-size: 60px;
+    }
+}
+
+@media (width <= 767px) {
+    .fifthPageCard {
+        margin-bottom: 200px !important;
+    }
+    .card-content {
+        margin-top: 150px;
+    }
+
+    .card-image {
+        max-width: 70% !important; 
+        margin-left: 0px; 
+        padding-right: 0px;
+    }
+}
+
+@media (width <= 766px) {
+    .firstPage {
+        height: 880px;
+    }
+
+    .logo-padding h1 {
+        padding-top: 10px;
+        font-size: 45px;
+        margin-left: 0px;
+    }
+
+    .main-text .firstBox {
+        max-width: 602px;
+        height: 84.63px;
+        font-size: 38px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 320px;
+        height: 84.63px;
+        font-size: 38px;
+    }
+
+    .main-text h1 {
+        padding-top: 20px;
+        font-size: 20px;
+    }
+
+    .eclipse-button {
+        margin-top: -70px;
+    }
+    
+    .eclipse {
+        width: 110px; 
+        height: 110px;
+    }
+
+    .eclipse img {
+        width: 60px;
+    }
+
+    .secondPage-header {
+        padding-top: 90px;
+        padding-bottom: 10px;
+        font-size: 48px !important;
+    }
+
+    .section-title {
+        font-size: 48px
+    }
+
+    .section-subtitle {
+        font-size: 25px;
+    }
+
+    .gallery-title {
+        font-size: 50px;
+    }
+
+    .photo-item {
+        padding: 15px !important; 
+    }
+    
+    .photo-item img {
+        width: 85%;
+    }
+}
+
+@media (width <= 660px) {
+    .firstPage {
+        height: 870px;
+    }
+
+    .logo-padding h1 {
+        padding-top: 10px;
+        font-size: 45px;
+        margin-left: 0px;
+    }
+
+    .main-text .firstBox {
+        max-width: 492px;
+        height: 64.63px;
+        font-size: 30px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 280px;
+        height: 64.63px;
+        font-size: 30px;
+    }
+
+    .main-text h1 {
+        padding-top: 15px;
+        font-size: 18px;
+    }
+
+    .eclipse-button {
+        margin-top: -70px;
+    }
+    
+    .eclipse {
+        width: 110px; 
+        height: 110px;
+    }
+
+    .eclipse img {
+        width: 60px;
+    }
+
+    .gallery-title {
+        font-size: 45px;
+    }
+}
+
+@media (width <= 536px) {
+    .firstPage {
+        height: 850px;
+    }
+
+    .logo-padding h1 {
+        padding-top: 10px;
+        font-size: 45px;
+        margin-left: 0px;
+    }
+
+    .first-button h1,
+    .second-button h1 {
+        font-size: 32px;
+    }
+
+    .custom-select {
+        font-size: 32px !important; 
+    }
+
+    .custom-select option {
+        font-size: 32px !important; 
+    }
+
+    .main-text .firstBox {
+        max-width: 442px;
+        height: 64.63px;
+        font-size: 28px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 270px;
+        height: 64.63px;
+        font-size: 28px;
+    }
+
+    .main-text h1 {
+        padding-top: 15px;
+        font-size: 18px;
+    }
+
+    .eclipse-button {
+        margin-top: -90px;
+    }
+    
+    .eclipse {
+        width: 110px; 
+        height: 110px;
+    }
+
+    .eclipse img {
+        width: 60px;
+    }
+
+    .secondPageContainer .row {   
+        gap: 20px !important;              
+    }
+
+    .secondPageCard {      
+        max-width: 380px !important;       
+        height: 220px !important;          
+    }
+
+    .secondPage-header {
+        font-size: 45px !important;
+    }
+    
+    .custom-card h1 {
+        font-size: 28px;
+        line-height: 35px;
+    }
+    
+    .custom-card p {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .section-title {
+        font-size: 42px
+    }
+
+    .section-subtitle {
+        font-size: 22px;
+    }
+
+    .gallery-title {
+        font-size: 38px;
+        padding-bottom: 20px !important;
+    }
+}
+
+@media (width <= 448px) {
+    .firstPage {
+        height: 920px;
+    }
+
+    .logo-padding h1 {
+        padding-top: 10px;
+        font-size: 40px;
+        margin-left: 0px;
+    }
+
+    .second-button div {
+        width: 92% !important;
+    }
+
+    .first-button div {
+        width: 94% !important;
+    }
+
+    .first-button img {
+        margin-left: 48% !important; 
+    }
+    
+    .second-button img {
+        margin-left: 40%;
+    }
+
+    .first-button h1,
+    .second-button h1 {
+        font-size: 28px;
+    }
+
+    .collapse .header-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-select {
+        font-size: 28px !important; 
+    }
+
+    .custom-select option {
+        font-size: 28px !important; 
+    }
+
+    .main-text .firstBox {
+        max-width: 412px;
+        height: 64.63px;
+        font-size: 26px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 250px;
+        height: 64.63px;
+        font-size: 26px;
+    }
+
+    .main-text h1 {
+        padding-top: 15px;
+        font-size: 20px;
+    }
+
+    .eclipse-button {
+        margin-top: -90px;
+    }
+    
+    .eclipse {
+        width: 100px; 
+        height: 100px;
+    }
+
+    .eclipse img {
+        width: 50px;
+    }
+
+    .section-title {
+        font-size: 38px
+    }
+
+    .section-subtitle {
+        font-size: 20px;
+    }
+
+    .thirdPageButton {
+        width: 187px !important;
+        height: 67px !important;
+        font-size: 23px;
+    }
+
+    .gallery-title {
+        font-size: 32px;
+        padding-bottom: 15px !important;
+    }
+
+    .photo-item {
+        padding: 10px !important; 
+    }
+    
+    .photo-item img {
+        width: 85%;
+    }
+}
+
+@media (width <= 418px) {
+    .firstPage {
+        height: 920px;
+    }
+
+    .logo-padding h1 {
+        padding-top: 10px;
+        font-size: 30px;
+        margin-left: 0px;
+    }
+
+    .second-button div {
+        width: 92% !important;
+    }
+
+    .first-button div {
+        width: 94% !important;
+    }
+
+    .first-button img {
+        margin-left: 46% !important; 
+    }
+    
+    .second-button img {
+        margin-left: 40%;
+    }
+
+    .first-button h1,
+    .second-button h1 {
+        font-size: 28px;
+    }
+
+    .collapse .header-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-select {
+        font-size: 28px !important; 
+    }
+
+    .custom-select option {
+        font-size: 28px !important; 
+    }
+
+    .main-text .firstBox {
+        max-width: 365px;
+        height: 64.63px;
+        font-size: 22px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 235px;
+        height: 64.63px;
+        font-size: 22px;
+    }
+
+    .main-text h1 {
+        padding-top: 15px;
+        font-size: 16px;
+    }
+
+    .eclipse-button {
+        margin-top: -90px;
+    }
+    
+    .eclipse {
+        width: 100px; 
+        height: 100px;
+    }
+
+    .eclipse img {
+        width: 50px;
+    }
+
+    .section-title {
+        font-size: 35px
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+    }
+
+    .thirdPageButton {
+        width: 167px !important;
+    }
+
+    .gallery-title {
+        font-size: 30px;
+        padding-bottom: 12px !important;
+    }
+}
+
+
+@media (width <= 400px) {
+    .secondPageContainer .row {   
+        gap: 15px !important;              
+    }
+
+    .secondPageCard {      
+        max-width: 360px !important;       
+        height: 200px !important;          
+    }
+
+    .secondPage-header {
+        font-size: 45px !important;
+    }
+    
+    .custom-card h1 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    
+    .custom-card p {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .custom-margin {
+        width: 50px;
+        height: 50px;
+    }
+
+    .second-button div {
+        width: 96% !important;
+    }
+
+    .first-button div {
+        width: 98% !important;
+    }
+
+    .first-button img {
+        margin-left: 40% !important; 
+    }
+    
+    .second-button img {
+        margin-left: 40% !important;
+    }
+
+    .section-title {
+        font-size: 32px
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+    }
+
+    .gallery-title {
+        font-size: 28px;
+        padding-bottom: 10px;
+    }
+
+    .card-title {
+        font-size: 35px !important;
+    }
+
+    .fifthPageButton {
+        width: 226px !important;
+        height: 67px !important;
+        font-size: 28px;
+    }
+}
+
+@media (width <= 370px) {
+    .main-text .firstBox {
+        max-width: 352px;
+        height: 64.63px;
+        font-size: 22px;
+    }
+    
+    .main-text .secondBox {
+        max-width: 230px;
+        height: 64.63px;
+        font-size: 22px;
+    }
+
+    .secondPageCard {      
+        max-width: 340px !important;       
+        height: 180px !important;          
+    }
+
+    .secondPage-header {
+        font-size: 45px !important;
+    }
+    
+    .custom-card h1 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    
+    .custom-card p {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .second-button div {
+        width: 80% !important;
+    }
+
+    .first-button div {
+        width: 82% !important;
+    }
+
+    .first-button img {
+        margin-left: 24% !important; 
+    }
+    
+    .second-button img {
+        margin-left: 40%;
+    }
+
+    .section-title {
+        font-size: 30px
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+    }
+
+    .thirdPageButton {
+        width: 180px !important;
+    }
+
+    .first-content img{
+        padding-top: 50px;
+    }
+
+    .photo-item {
+        padding: 10px !important; 
+    }
+    
+    .photo-item img {
+        width: 90%;
+    }
+}
+
+
+
