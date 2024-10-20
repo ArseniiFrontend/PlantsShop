@@ -2,7 +2,7 @@
 
 Flower Shop Website This is a business card website for selling flowers, designed with a unique aesthetic and a focus on delivering a personalized user experience. The website features multilingual support, beautiful animations, and a custom design to enhance the shopping experience.
 
-## Link to the web-site
+## Link to the website
 <p align="left">
   <a href="https://arseniifrontend.github.io/PlantsShop/" target="_blank">
     <img src="https://img.shields.io/badge/Visit-plantsshop.com-9CE195?style=for-the-badge&logo=google-chrome&logoColor=9CE195" alt="plantsshop.com">
